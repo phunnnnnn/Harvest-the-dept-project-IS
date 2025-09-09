@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://g0x8u6miq4iu"]
+
+[ext_resource type="PackedScene" uid="uid://b7viy85ps2u8i" path="res://scene/scene-Pot.tscn" id="1_0hm2t"]
+[ext_resource type="Script" uid="uid://g6b7rvraj8cx" path="res://scene/grid_container.gd" id="1_w4sg1"]
+[ext_resource type="PackedScene" uid="uid://b0qsthpxdlat6" path="res://scene/scene-Seed.tscn" id="2_hpn15"]
+[ext_resource type="PackedScene" uid="uid://s8aboxgsx8mg" path="res://scene/debug_lable.tscn" id="3_e1gpk"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(1419, 375)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -268.0
+offset_top = -52.0
+offset_right = 268.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+script = ExtResource("1_w4sg1")
+
+[node name="Pot" parent="GridContainer" instance=ExtResource("1_0hm2t")]
+layout_mode = 2
+
+[node name="Pot2" parent="GridContainer" instance=ExtResource("1_0hm2t")]
+layout_mode = 2
+
+[node name="Pot3" parent="GridContainer" instance=ExtResource("1_0hm2t")]
+layout_mode = 2
+
+[node name="Pot4" parent="GridContainer" instance=ExtResource("1_0hm2t")]
+layout_mode = 2
+
+[node name="Pot5" parent="GridContainer" instance=ExtResource("1_0hm2t")]
+layout_mode = 2
+
+[node name="Seed-bag" parent="." instance=ExtResource("2_hpn15")]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 467.0
+offset_right = 329.0
+offset_bottom = 571.0
+
+[node name="Seed-bag2" parent="." instance=ExtResource("2_hpn15")]
+layout_mode = 0
+offset_left = 357.0
+offset_top = 472.0
+offset_right = 461.0
+offset_bottom = 576.0
+
+[node name="debug_lable" parent="." instance=ExtResource("3_e1gpk")]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 27.0
+offset_right = 221.0
+offset_bottom = 189.0
