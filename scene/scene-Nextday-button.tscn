@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dhumwjsgt44op"]
+
+[node name="button nextday" type="Button"]
+offset_right = 205.0
+offset_bottom = 151.0
+text = "Next day"

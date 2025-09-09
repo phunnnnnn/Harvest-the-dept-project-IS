@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://g0x8u6miq4iu"]
+[gd_scene load_steps=9 format=3 uid="uid://g0x8u6miq4iu"]
 
 [ext_resource type="PackedScene" uid="uid://b7viy85ps2u8i" path="res://scene/scene-Pot.tscn" id="1_0hm2t"]
-[ext_resource type="Script" uid="uid://g6b7rvraj8cx" path="res://scene/grid_container.gd" id="1_w4sg1"]
+[ext_resource type="Script" uid="uid://g6b7rvraj8cx" path="res://globle/grid_container.gd" id="1_w4sg1"]
 [ext_resource type="PackedScene" uid="uid://b0qsthpxdlat6" path="res://scene/scene-Seed.tscn" id="2_hpn15"]
 [ext_resource type="PackedScene" uid="uid://s8aboxgsx8mg" path="res://scene/debug_lable.tscn" id="3_e1gpk"]
+[ext_resource type="PackedScene" uid="uid://ber6t4ikq4civ" path="res://scene/scene-Day-label.tscn" id="5_vc123"]
+[ext_resource type="Script" uid="uid://cndx37h5jw7jx" path="res://script/script-daylable_.gd" id="6_5gxrx"]
+[ext_resource type="PackedScene" uid="uid://dhumwjsgt44op" path="res://scene/scene-Nextday-button.tscn" id="6_mo3lf"]
+[ext_resource type="Script" uid="uid://bvfsu3av0npxs" path="res://scene/script-button-nextday.gd" id="7_bw3r5"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -14,7 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(1419, 375)
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="Garden" type="GridContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -30,38 +34,56 @@ grow_vertical = 2
 columns = 5
 script = ExtResource("1_w4sg1")
 
-[node name="Pot" parent="GridContainer" instance=ExtResource("1_0hm2t")]
+[node name="Pot" parent="Garden" instance=ExtResource("1_0hm2t")]
 layout_mode = 2
 
-[node name="Pot2" parent="GridContainer" instance=ExtResource("1_0hm2t")]
+[node name="Pot2" parent="Garden" instance=ExtResource("1_0hm2t")]
 layout_mode = 2
 
-[node name="Pot3" parent="GridContainer" instance=ExtResource("1_0hm2t")]
+[node name="Pot3" parent="Garden" instance=ExtResource("1_0hm2t")]
 layout_mode = 2
 
-[node name="Pot4" parent="GridContainer" instance=ExtResource("1_0hm2t")]
+[node name="Pot4" parent="Garden" instance=ExtResource("1_0hm2t")]
 layout_mode = 2
 
-[node name="Pot5" parent="GridContainer" instance=ExtResource("1_0hm2t")]
+[node name="Pot5" parent="Garden" instance=ExtResource("1_0hm2t")]
 layout_mode = 2
 
 [node name="Seed-bag" parent="." instance=ExtResource("2_hpn15")]
 layout_mode = 0
-offset_left = 225.0
-offset_top = 467.0
-offset_right = 329.0
-offset_bottom = 571.0
+offset_left = 222.0
+offset_top = 472.0
+offset_right = 326.0
+offset_bottom = 576.0
 
 [node name="Seed-bag2" parent="." instance=ExtResource("2_hpn15")]
 layout_mode = 0
-offset_left = 357.0
-offset_top = 472.0
-offset_right = 461.0
-offset_bottom = 576.0
+offset_left = 360.0
+offset_top = 469.0
+offset_right = 464.0
+offset_bottom = 573.0
 
 [node name="debug_lable" parent="." instance=ExtResource("3_e1gpk")]
 layout_mode = 0
-offset_left = 27.0
-offset_top = 27.0
-offset_right = 221.0
-offset_bottom = 189.0
+offset_left = 778.0
+offset_top = 11.0
+offset_right = 972.0
+offset_bottom = 173.0
+
+[node name="Day label" parent="." instance=ExtResource("5_vc123")]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 20.0
+offset_right = 426.0
+offset_bottom = 202.0
+script = ExtResource("6_5gxrx")
+
+[node name="button nextday" parent="." instance=ExtResource("6_mo3lf")]
+layout_mode = 0
+offset_left = 918.0
+offset_top = 472.0
+offset_right = 1123.0
+offset_bottom = 623.0
+script = ExtResource("7_bw3r5")
+
+[connection signal="pressed" from="button nextday" to="button nextday" method="_on_pressed"]

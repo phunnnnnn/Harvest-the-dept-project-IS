@@ -10,7 +10,7 @@ extends Panel
 @onready var thisSceneColorRect = $ColorRect
 
 #seedbag data variable
-var plant : String = "default"
+var plant : String = "sunflower"
 
 #variable
 var mouse_is_on_this_scene : bool = false
@@ -68,7 +68,7 @@ func drag_this_scene():
 			GlobleVariable.dragging_selection_area_size = Vector2(0.0,0.0)
 			GlobleVariable.dragging_selection_pos = Vector2(0.0,0.0)
 			
-			if GlobleVariable.selected_item_name != "" :
+			if GlobleVariable.selected_item_name != "" && not get_node(GlobleVariable.selected_item_path).planted :
 				#print("PLANT !!!!")
 				GlobleFunction._planting(GlobleVariable.selected_item_name,GlobleVariable.selected_item_path,plant)
 				thisScene.queue_free()

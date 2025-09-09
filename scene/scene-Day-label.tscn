@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ber6t4ikq4civ"]
+
+[node name="Day label" type="Label"]
+offset_right = 407.0
+offset_bottom = 166.0
+text = "Day : 0"
